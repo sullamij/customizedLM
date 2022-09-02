@@ -4,7 +4,7 @@ Customized LM that outputs attention weights.
 
 ### Usage 
 ---------
-```
+```python
 import modeling_gpt2
 import tokenization_gpt2
 
