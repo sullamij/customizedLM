@@ -2,7 +2,22 @@
 ----------
 Customized LM that outputs attention weights. 
 
+### Usage 
+---------
+```
+import modeling_gpt2
+import tokenization_gpt2
 
+model = GPT2Model.from_pretrained('gpt2')
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+text = "sample text gpt2"
+tokens = tokenizer.tokenize(text) 
+token_ids = tokenizer.convert_tokens_to_ids(tokens)
+tokens_tensor = torch.tensor(token_ids).unsqueeze(0) 
+model.eval()
+output = model(tokens_tensor) 
+attention_output = output[-1]
+```
 
 #### Acknowledgments
 -------------
